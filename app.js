@@ -43,8 +43,8 @@ var feedbackSchema=new mongoose.Schema({
 
 var Feedback=mongoose.model('feedback', feedbackSchema);
 
-app.get('/', (req, res)=>{
-    res.status(200).render("index.html");
+app.get('https://sanjit-kumar-verma.github.io/CryptographyWebsite/', (req, res)=>{
+    res.status(200).render("index");
 })
 app.get("/feedback", (req,res)=>{
     res.status(200).render('feedback', {title: "hey sanjit", message:"hehwqeiueji"})
