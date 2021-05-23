@@ -44,7 +44,7 @@ var feedbackSchema=new mongoose.Schema({
 var Feedback=mongoose.model('feedback', feedbackSchema);
 
 app.get('/', (req, res)=>{
-    res.status(200).render("views/index");
+    res.status(200).render("index.html");
 })
 app.get("/feedback", (req,res)=>{
     res.status(200).render('feedback', {title: "hey sanjit", message:"hehwqeiueji"})
