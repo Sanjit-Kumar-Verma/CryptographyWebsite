@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="../static/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Balsamiq+Sans:ital,wght@1,700&family=Newsreader&family=Padauk&family=Patua+One&family=Roboto:ital,wght@1,300&family=Ubuntu:ital@1&display=swap"
+        rel="stylesheet">
+        <title>AES Encryption and Decryption</title>
+    <style>
+        /* body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.container {
+    flex: 1;   
+} */      footer p{
+          margin-bottom: 0px;
+}
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #031320;
+        }
+        @media (max-width: 1200px){   /*842*/
+            .column{
+                font-size: 5vw;
+                
+            }
+            .heading{
+                width: 80%;
+                text-align: center;
+            }
+            .heading h2{
+                 font-size:3.5vw
+            }
+            .heading p{
+                 font-size:2vw
+            }
+            .navbar-option li a{
+            font-size: 1.2rem;
+            }
+            .encrypt-box h2{
+                font-size: 3.4vw;
+            }
+            .decrypt-box h2{
+                font-size: 3.4vw;
+            }
+            .box1{
+                height: 70px;
+                font-size: 14px;
+            }
+            .box1:hover{
+                height: 72px;
+                font-size: 15px;
+            }
+            .password{
+                /* height: 70px; */
+                font-size: 14px;
+            }
+            .password:hover{
+                /* height: 72px; */
+                font-size: 15px;
+            }
+            .box2{
+                height: 70px;
+                font-size: 14px;
+            }
+            .box2:hover{
+                height: 72px;
+                font-size: 15px;
+            }
+            span{
+                
+            font-size: 1.7rem;
+            
+            }
+            
+                
+        }
+        @media (max-width: 842px){ /*450*/
+            .logo{
+                height: 2.5rem;
+            }
+            /* .navbar-title a{
+                font-size: 2.8vw;
+            } */
+            .navbar{
+                max-height: 50px;
+            }
+            
+            .navbar-title li {
+            margin-top: 0.8rem;
+            }
+            .navbar-feedback li{
+                margin-top: 1.1rem;
+            }
+            .navbar-option li{
+                padding-top: 1.1rem;
+            }
+            .navbar-feedback li{
+                /* font-size: 1.4vw; */
+                font-size: 1.2rem;
+            }
+            .about-section h5{
+                font-size: 17px
+            }
+            .about-section h2{
+                margin-top: 15px;
+                margin-bottom: 5px;
+                font-size: 27px;
+
+            }
+            .about-section li{
+                font-size: 15px;
+            }
+            .about-section p{
+                margin-top: 12px;
+                font-size: 15px;
+                padding-right: 2%;
+                margin-bottom: 5px;
+            }
+            .about-section h4{
+                margin-top: 10px;
+                font-size: 16px;
+            }
+            .FAQ h1{
+                font-size: 28px;
+            }
+            .FAQ-Q h4{
+                font-size: 16px;
+            }
+            .FAQ-Q h3{
+                font-size: 19px
+            }
+            .decrypt-box h4{
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .encrypt-box h4{
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .encrypt-bottom h3{
+                font-size: 3.4vw;
+            }
+            .decrypt-bottom h3{
+                font-size: 3.4vw;
+            }
+            .encrypt-decrypt{
+                height: 260px;
+            }
+            .decrypt-box {
+                height: 260px;
+            }
+            .decrypt-bottom{
+                height: 130px;
+            }
+            .encrypt-bottom{
+                height: 130px;
+            }
+            .result1{
+                height: 130px;
+            }
+            .box1{
+                /* height: 70px; */
+                font-size: 12px;
+            }
+            .box1:hover{
+                /* height: 72px; */
+                font-size: 13px;
+        
+        }
+            .box2{
+                /* height: 70px; */
+                font-size: 12px;
+            }
+            .box2:hover{
+                /* height: 72px; */
+                font-size: 13px;
+            }
+            .password{
+                /* height: 70px; */
+                font-size: 12px;
+            }
+            .password:hover{
+                /* height: 72px; */
+                font-size: 13px;
+            }
+            .navbar-option li a{
+            font-size: 1rem;
+            }
+        
+            }
+        @media (max-width:600px){
+            .navbar-feedback li{
+                font-size: 1rem;
+            }
+            .navbar-title a{
+                font-size: 1.5rem;
+            }
+            .navbar-option li {
+                padding-left:8px;
+            }
+            .navbar-title li{
+                padding: 0 0.9rem;
+            }
+            .footer p{
+                font-size: 10px;
+            }
+            .output1, .output2{
+    font-size: 12px;
+}
+.encrypt-upper .btn{
+    font-size: 13px;
+}
+.decrypt-upper .btn{
+    font-size: 13px;
+}
+        }
+        @media (max-width:450px){
+            .encrypt-box h2 {
+           font-size: 15px;
+}
+            .decrypt-box h2 {
+           font-size: 15px;
+}
+.encrypt-upper .btn{
+    font-size: 10px;
+}
+.decrypt-upper .btn{
+    font-size: 10px;
+}
+.box1:hover{
+    border-radius: 6px;
+}
+.box2:hover{
+    border-radius: 6px;
+}
+.output1, .output2{
+    font-size: 10px;
+}
+.encrypt-box h4 {
+    font-size: 12px;
+}
+.box1{
+                /* height: 70px; */
+                font-size: 10px;
+            }
+            .box1:hover{
+                /* height: 72px; */
+                font-size: 11px;
+        
+        }
+            .box2{
+                /* height: 70px; */
+                font-size: 10px;
+            }
+            .box2:hover{
+                /* height: 72px; */
+                font-size: 11px;
+            }
+            .password{
+                /* height: 70px; */
+                font-size: 10px;
+            }
+            .password:hover{
+                /* height: 72px; */
+                font-size: 11px;
+            }
+            .about-section h5{
+                font-size: 13px
+            }
+            .about-section h2{
+                margin-top: 9px;
+                margin-bottom: 2px;
+                font-size: 17px;
+
+            }
+            .about-section li{
+                font-size: 11px;
+            }
+            .about-section p{
+                margin-top: 8px;
+                font-size: 10px;
+                padding-right: 2%;
+                margin-bottom: 3px;
+            }
+            .about-section h4{
+                margin-top: 6px;
+                font-size: 12px;
+            }
+            .navbar{
+                margin-bottom: 10px;
+            }
+            .navbar-logo{
+                animation-duration: 4s;
+            }
+            @keyframes sanjit {
+    from {
+        width: 75%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+.FAQ h1{
+                font-size: 20px;
+            }
+            .FAQ-Q h4{
+                font-size: 10px;
+            }
+            .FAQ-Q h3{
+                font-size: 14px;
+            }
+            .FAQ-Q span{
+                font-size: 1rem;
+            }
+            .navbar-option li a:hover{
+       color:black;
+       font-size: 1.2rem;
+}
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container2">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <ul class="navbar-title">
+                    <li><img src="../static/logo.png" class="logo" id="logo"><span><a href="/">Encrypto</a></span></li>
+                </ul>
+                <ul class="navbar-option">
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#FAQ">FAQ</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                </ul>
+            </div>
+            <ul class="navbar-feedback">
+                <li><a href="/feedback"><u>Give us feedback</u></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron" id="jumbo">
+            <div class="row1">
+                <div class="column" id="first">
+                    E
+                </div>
+                <div class="column" id="second">
+                    N
+                </div>
+                <div class="column" id="third">
+                    C
+                </div>
+                <div class="column" id="fourth">
+                    R
+                </div>
+                <div class="column" id="fifth">
+                    Y
+                </div>
+                <div class="column" id="sixth">
+                    P
+                </div>
+                <div class="column" id="seventh">
+                    T
+                </div>
+                <div class="column" id="eighth">
+                    O
+                </div>
+            </div>
+            <div class="line" id="line">
+            </div>
+            <div class="heading">
+                <h2>Encrypt and Decrypt Text Online</h2>
+                <p>Protect your text by Encrypting and Decrypting</p>
+            </div>
+        </div>
+        <div class="encrypt-decrypt">
+            <div class="encrypt-box">
+                <div class="encrypt-upper">
+                    <h2>AES Online Encryption</h2>
+                    <h4>Enter text to be Encrypted</h4>
+                    <textarea type="text" id="raw-data" class="box1" placeholder="Enter plain text here"></textarea>
+                    <h4>Enter the Password</h4>
+                    <input type="text" minlength="4" id="enc-password" class="password"
+                        placeholder="Enter the Key to encrypt">
+                    <button class="btn btn-primary btn-md btn-position" onclick="encr()">Encrypt</button>
+                </div>
+            </div>
+            <div class="decrypt-box">
+                <div class="decrypt-upper">
+                    <h2>AES Online Decryption</h2>
+                    <h4>Enter text to be Decrypted</h4>
+                    <textarea type="text" id="cipher-data" class="box2"
+                        placeholder="Enter encrypted text here"></textarea>
+                    <h4>Enter the Password</h4>
+                    <input type="text" minlength="4" id="dec-password" class="password"
+                        placeholder="Enter the Key to encrypt">
+                    <button class="btn btn-primary btn-md btn-position" onclick="decr()">Decrypt</button>
+                </div>
+            </div>
+        </div>
+        <div class="result1">
+            <div class="encrypt-bottom">
+                <h3>Encrypted Text</h3>
+                <textarea readonly id="display1" class="output1"></textarea>
+            </div>
+            <div class="decrypt-bottom">
+                <h3>Decrypted Text</h3>
+                <textarea readonly id="display2" class="output2"></textarea>
+            </div>
+
+        </div>
+        <div class="about-section" id="about-section">
+            <h5>Encryption is the process of translating plain text data (plaintext) into something that appears to be
+                random and meaningless (ciphertext). Decryption is the process of converting ciphertext back to
+                plaintext. A symmetric key is used during both the encryption and decryption processes. To decrypt a
+                particular piece of ciphertext, the key that was used to encrypt the data must be used.</h4>
+                <h2>How to use:
+            </h5>
+            <ul>
+                <li>Paste or type the text you want to encrypt into the large input field.</li>
+                <li>Enter a Password</li>
+                <li>Press the encrypt button</li>
+                <li>Copy the encrypted text into an email or chat or wherever.</li>
+            </ul>
+            <p>Be sure to give the password to the recipient so that they can decrypt the text. I suggest to use a safer
+                way than email to deliver the keyword (chat, txt, voice maybe). To decrypt a text use the same way and
+                press the decrypt button.</p>
+            <h4><b>Note:</b> None of the data you enter is saved or even being sent to the server, the encryption
+                happens in your
+                browser (via JavaScript).</h4>
+        </div>
+        <div class="FAQ" id="FAQ">
+            <h1>Frequenty Asked Questions</h1>
+            <div class="FAQ-Q">
+                <h3>What encryption means?</h3>
+                <h4><b>Encryption</b> is the process that scrambles readable text so it can only be read by the person
+                    who has the secret code, or decryption <span>key</span>. It helps provide data security for
+                    sensitive information.</h4>
+                <h3>What is the difference between encrypting and decrypting?</h3>
+                <h4><b>Encryption</b> is a process of converting a plain text into an encrypted or <span></span>cipher
+                    text</span> which is not human readable. Whereas <b>Decryption</b> is reverse of encryption and is a
+                    process of converting the encrypted or cipher text into plain text which is human readable.</h4>
+                <h3>What are the elements of encryption?</h3>
+                <h4>There are five main components of a symmetric encryption system: plaintext, encryption algorithm,
+                    secret key, ciphertext, and the decryption algorithm.</h4>
+                <h3>Is an encryption key a password?</h3>
+                <h4>A <b>password</b> is a user created secret phrase that is used to verify identity or generate
+                    <span>cryptographic keys</span>. A <span>key</span> is data that is used to lock and unlock
+                    cryptographic functions such as encryption, authentication and authorization.
+                </h4>
+
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer" id="footer">
+            <p>Copyright Encrypto secure. All right Reserved | Contact Us: +91 90000 00000</p>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

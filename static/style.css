@@ -1,0 +1,564 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.navbar {
+    background-color: rgb(87 78 78);
+    /* max-height: 200px; */
+    display: flex;
+    margin-bottom: 2px;
+    overflow:hidden;
+    position: sticky;
+    /* width: 100%; */
+}
+
+nav div ul {
+    display: flex;
+    list-style: none;
+
+    color: white;
+}
+
+.navbar-title li {
+    padding: 0 1.2rem;
+
+    /* margin-top: 20px; */
+    /* padding: 4px;
+   padding-top: 15px;
+   margin-bottom: 0px; */
+    margin-top: 1.2rem;
+}
+
+.logo {
+    filter: invert(71%);
+    max-height: 100%;
+    height: 3rem;
+    /* margin-top: 1.1rem; */
+    /* margin-bottom: 0.5rem; */
+}
+
+span {
+    font-weight: bold;
+    font-size: 1.9rem;
+    /* margin-top: 1.1rem; */
+}
+
+.navbar-logo {
+    width: 97%;
+    margin: auto;
+    display: flex;
+    animation-name: sanjit;
+    animation-duration: 2s;
+}
+.navbar-title a{
+    text-decoration: none;
+    color: white;
+}
+
+@keyframes sanjit {
+    from {
+        width: 50%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.navbar-option ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-option li {
+    font-weight: bold;
+    padding-top: 1.6rem;
+    padding-left: 1.4rem;
+    font-size: 1.4rem;
+    /* padding: 1.4rem 1.2rem; */
+}
+.navbar-feedback li{
+    margin-top: 4px;
+    /* font-family: 'Patua One', cursive; */
+    font-size: 1.4rem;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+.column {
+    width: 12.5%;
+    font-weight: 900;
+    font-size: 5.5rem;
+    visibility: hidden;
+    /* text-align: center; */
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+@keyframes underline {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 95%;
+    }
+}
+#line{
+    background-color: black;
+    width: 0%;
+    margin: 0px;
+    padding: 0px;
+    /* color: rgba(160, 145, 145, 0) */
+    height: 2rem;
+}
+.heading h2 {
+    font-size: 4rem;
+    font-family: 'Baloo Bhai 2', cursive;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.heading {
+    width: 60%;
+    margin: auto;
+}
+
+.container2::before {
+    content: "";
+    background: url(background3.jpg) no-repeat center center/cover;
+    /* background: url(background3.jpg) center center cover no-repeat fixed; */
+    position: absolute;
+    width: 100%;
+    /* height: 1746px; */
+    z-index: -1;
+    opacity: 0.8;
+    top: 0px;
+    left: 0px;
+    margin-top: 54px;
+}
+
+.jumbotron {
+    background-color: blanchedalmond;
+}
+
+#jumbo {
+    background-color: #ddd0d0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    margin: 0px;
+    margin-bottom: 0px;
+    /* opacity: 0.8; */
+
+}
+
+.heading p {
+    width: 80%;
+    margin: auto;
+}
+
+.container {
+    width: 100%;
+    /* background-color: black; */
+    /* opacity:0.9; */
+    /* z-index: -1; */
+    /* padding-bottom: 0px;
+    margin-bottom: 0px; */
+    /* padding: 0px; */
+    /* margin:auto; */
+}
+
+.encrypt-decrypt {
+    /* background-color: #ddd0d0; */
+    /* background-color:#ddd0d0; */
+    /* margin-top: 0px; */
+    text-align: center;
+    /* background-color: red; */
+    margin-top: 15px;
+    /* height: 60rem; */
+    height: 300px;
+}
+
+.encrypt-box h2 {
+    font-weight: 400;
+    font-family: 'Baloo Bhai 2', cursive;
+    margin-top: 10px;
+    color: #2f80c6;
+}
+
+.encrypt-box h4 {
+    font-family: 'Roboto', sans-serif;
+    color: #425c71;
+    font-weight: bold;
+}
+
+.decrypt-box h2 {
+    font-weight: 400;
+    font-family: 'Baloo Bhai 2', cursive;
+    margin-top: 10px;
+    color: #2f80c6;
+}
+
+.decrypt-box h4 {
+    font-family: 'Roboto', sans-serif;
+    color: #425c71;
+    font-weight: bold;
+}
+
+.password {
+    width: 60%;
+    background-color: #8a6d3b4f;
+    border-radius: 5px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    color: whitesmoke;
+    font-size: 15px;
+    min-height: 20px;
+    padding:0 1%;
+    outline: none;
+}
+
+.password:hover {
+    background-color: #1c172ca8;
+    width: 70%;
+    /* height: 60%; */
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    /* height: 30px; */
+    
+}
+#enc-password:hover{
+    outline: none;
+}
+#dec-password:hover{
+    outline: none;
+}
+
+.box1 {
+    width: 70%;
+    height: 80px;
+    border-radius: 5px;
+    background-color: #8a6d3b4f;
+    /* background-color: #1c172ca8; */
+    transition-property: all;
+    transition-duration: 0.7s;
+    color: rgb(12, 16, 27);
+    font-size: 16px;
+    padding:0 1.5%;
+    outline:none;
+}
+
+.box1:hover {
+    background-color: #1c172ca8;
+    width: 80%;
+    height: 88px;
+    border-radius: 14px;
+    font-size: 18px;
+    color: whitesmoke;
+    outline: none;
+}
+.box2 {
+    width: 70%;
+    height: 80px;
+    border-radius: 5px;
+    /* background-color: #f5f5f5b5; */
+    background-color: #8a6d3b4f;
+    /* background-color: #1c172ca8; */
+    transition-property: all;
+    transition-duration: 0.7s;
+    color: rgb(12, 16, 27);
+    font-size: 16px;
+    padding:0 1.5%;
+    outline: none;
+}
+.box2:hover {
+    background-color: #1c172ca8;
+    width: 80%;
+    height: 88px;
+    border-radius: 14px;
+    font-size: 18px;
+    color: whitesmoke;
+    outline: none;
+}
+
+.encrypt-box {
+    width: 49%;
+    float: left;
+    background-color: #c3bebe;
+    border-radius: 10px;
+    height: 100%;
+    /* display: flex; */
+
+    /* transition-property: background-color; */
+    /* z-index: -1; */
+    /* margin: auto; */
+    /* border-radius: 2px; */
+}
+
+.decrypt-box {
+    width: 49%;
+    /* height: 2rem; */
+    float: right;
+    background-color: #c3bebe;
+    border-radius: 10px;
+    height: 300px;
+}
+
+textarea {
+    color: whitesmoke;
+    
+}
+
+/* .container2{
+    display: block;
+} */
+/* .container{
+    margin-top: 30px;
+} */
+body {
+    height: 100vh;
+    background-color: #031320;
+}
+
+.encrypt-upper,
+.decrypt-upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-position {
+    position: relative;
+    top: 15px;
+}
+.result1 {
+    margin-top: 8px;
+    height: 150px;
+}
+
+.result1 h3 {
+    margin-top: 6px;
+}
+
+.encrypt-bottom {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    background-color: #a3a5b4;
+    /* justify-content: center; */
+    align-items: center;
+    float: left;
+    border-radius: 6px;
+    height: 150px;
+    /* font-family: 'Patua One', cursive; */
+
+}
+.encrypt-bottom h3{
+    font-family: 'Patua One', cursive;
+}
+.decrypt-bottom {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    background-color: #a3a5b4;
+    /* justify-content: center; */
+    align-items: center;
+    float: right;
+    border-radius: 6px;
+    height: 150px;
+    /* font-family: 'Patua One', cursive; */
+}
+.decrypt-bottom h3{
+    font-family: 'Patua One', cursive;
+}
+
+.output1 {
+
+    width: 40%;
+    height: 40%;
+    /* height: 80px; */
+    border-radius: 5px;
+    background-color:#253645;
+    /* background-color: #1c172ca8; */
+    /* transition-property: all;
+    transition-duration: 0.7s; */
+    color: whitesmoke;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.output2 {
+
+    width: 40%;
+    height: 40%;
+    /* height: 80px; */
+    border-radius: 5px;
+    background-color:#253645;
+    /* background-color: #1c172ca8; */
+    /* transition-property: all;
+    transition-duration: 0.7s; */
+    color: whitesmoke;
+    font-size: 15px;
+    padding: 10px;
+}
+
+/* .output1:hover {
+    background-color: #1c172ca8;
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    font-size: 20px;
+
+} */
+@keyframes left1{
+    from{
+        width: 40%;
+        height: 40%;
+    }
+    to{
+        width: 80%;
+        height:60%
+    }
+}
+@keyframes right1{
+    from{
+        width: 40%;
+        height: 40%;
+    }
+    to{
+        width: 80%;
+        height:60%
+    }
+}
+.about-section {
+    background-color: #7593ad;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    /* padding: 10px; */
+    /* padding-left: 40px;
+    padding-top: 15px;
+    padding-right: 100px; */
+    /* padding: 15px 100px 20px 40px; */
+    padding: 1.3% 8% 1.8% 3.5%;
+}
+
+.about-section h2 {
+    margin-top: 20px;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 33px;
+}
+
+.about-section li {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.about-section p {
+    margin-top: 15px;
+    font-size: 18px;
+    padding-right: 10px;
+    font-family: 'Padauk', sans-serif;
+    color:#564126
+}
+.about-section h4{
+    margin-top: 15px;
+    font-family: 'Patua One', cursive;
+    color:#0b3458
+}
+.about-section h5{
+    font-size: 20px;
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+}
+.FAQ{
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #8f7b7a;
+    /* padding: 15px 100px 20px 40px; */
+    /* padding: 0.2% 8% 1.8% 3.5%; */
+    padding-top: 0.2%;
+    padding-left: 1%;
+    padding-right: 0.7%;
+    
+    
+}
+.FAQ h1{
+    font-family: 'Balsamiq Sans', cursive;
+    padding-top: 0px;
+    margin-bottom: 3px;
+    padding-left: 3%;
+    /* padding-bottom: 2px; */
+}
+.FAQ-Q{
+    background-color: #b2a2a1;
+    width: 100%;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-top: 0.8%;
+    padding-bottom: 1%;
+
+}
+.FAQ-Q h3{
+    margin-top: 5px;
+    font-family: 'Patua One', cursive;
+    margin-bottom: 0px;
+}
+.FAQ-Q h4{
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 2.5%;
+    padding-top: 0%;
+    margin-top: 5px;
+    /* margin-top: 1%; */
+}
+.footer{
+    background-color:#353333;
+    text-align: center;
+    margin-top: 2%;
+}
+.footer p{
+    font-size: 14px;
+    color: #e6e1e1;
+    padding: 1% 0%;
+}
+.navbar-option li a{
+          text-decoration: none;
+          color:white;
+}
+.navbar-title a:hover{
+    color:white;
+    text-decoration: none;
+}
+/* body{ */
+    /* background: url(background3.jpg) no-repeat center center/cover;
+    background-size: cover; */
+
+    /* background-color: #031320; */
+    /* background-color: black; */
+/* } */
+.navbar-option li a:hover{
+       color:black;
+       font-size: 1.5rem;
+}
+.navbar-feedback a{
+    color: white;
+
+}
+.navbar-feedback a:hover{
+    color: white;
+
+}
+.navbar-feedback li{
+ font-family: 'Balsamiq Sans', cursive;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="script.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Balsamiq+Sans:ital,wght@1,700&family=Newsreader&family=Padauk&family=Patua+One&family=Roboto:ital,wght@1,300&family=Ubuntu:ital@1&display=swap"
+        rel="stylesheet">
+    <title>Give us feedback</title>
+</head>
+<style>
+    body {
+        background-color: #031320;
+    }
+
+    .message {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* justify-content: center; */
+        width: 50%;
+        margin: auto;
+        background-color: blanchedalmond;
+        border-radius: 20px;
+    }
+
+    .message h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        padding: 0px 20px;
+    }
+
+    label {
+        margin-bottom: 0.5px;
+    }
+
+    .form-control {
+        margin-bottom: 9px;
+        border-radius: 7px;
+    }
+
+    #message {
+        width: 100%;
+        line-height: 3;
+        padding-top: 2px;
+    }
+
+    .btn-margin {
+        display: block;
+        margin: auto;
+        border-radius: 10px;
+        background-color: #65553a;
+        box-shadow: 2px 2px #baadad;
+
+
+    }
+
+    .btn-margin:hover {
+        background-color: #524734;
+        font-weight: 550;
+    }
+
+    .extra .btn:active {
+        background-color: #524734;
+        font-weight: 550;
+    }
+
+    .message textarea {
+        padding-top: 20px;
+    }
+    @media (max-width:650px) {
+        .message h1{
+            font-size: 25px;
+            }
+    }
+
+    @media (max-width:450px) {
+        .navbar-logo {
+            animation-duration: 4s;
+        }
+
+        @keyframes sanjit {
+            from {
+                width: 75%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .navbar-feedback li {
+            font-size: 1rem;
+        }
+
+        .navbar-title a {
+            font-size: 1.5rem;
+        }
+
+        .navbar-option li {
+            padding-left: 8px;
+        }
+
+        .navbar-title li {
+            padding: 0 0.9rem;
+        }
+
+        .footer p {
+            font-size: 10px;
+        }
+
+        .navbar-option li a {
+            font-size: 1rem;
+        }
+        .navbar{
+                max-height: 50px;
+            }
+            .message{
+               width: 70%;
+            }
+            .message h1{
+            font-size: 22px;
+            }
+            label{
+                font-size: 11px;
+            }
+            .form-control{
+                height: 24px;
+    padding: 3px 6px;
+    font-size: 10px;
+    margin-bottom: 5px;
+            }
+            .navbar-option li a:hover{
+       color:black;
+       font-size: 1.5rem;
+}
+    }
+    
+</style>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-logo">
+                <ul class="navbar-title">
+                    <li><img src="../static/logo.png" class="logo" id="logo"><span><a
+                                href="/">Encrypto</a></span></li>
+                </ul>
+                <ul class="navbar-option">
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#FAQ">FAQ</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                </ul>
+            </div>
+            <ul class="navbar-feedback">
+                <li><a href="/feedback"><u>Give us feedback</u></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="message">
+        <h1>Write your message</h1>
+        <form class="form-group extra" action="/feedback" method="post">
+            <label>NAME</label>
+            <input type="text" id="name" name="name" placeholder="Enter you name" class="form-control">
+            <label>EMAIL</label>
+            <input required type="email" id="email" name="email" placeholder="Enter you email" class="form-control">
+            <label>CONTACT</label>
+            <input type="tel" id="contact" name="contact" placeholder="Enter you contact number" class="form-control">
+            <label>YOUR MESSAGE</label><br>
+            <textarea required id="message" name="message" placeholder="Enter your message" class="form-control"></textarea>
+            <button type="submit" onclick="notify()" class="btn btn-primary btn-margin">Submit</button>
+        </form>
+
+    </div>
+    <script>
+       function notify(){
+            window.alert("Thanks for your feedback");
+        }
+    </script>
+
+</body>
+
+</html>
