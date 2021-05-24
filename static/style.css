@@ -547,10 +547,6 @@ body {
     /* background-color: #031320; */
     /* background-color: black; */
 /* } */
-.navbar-option li a:hover{
-       color:black;
-       font-size: 1.5rem;
-}
 .navbar-feedback a{
     color: white;
 
